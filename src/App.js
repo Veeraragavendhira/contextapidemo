@@ -4,12 +4,13 @@ import Profile from './components/Profile'
 import { useState } from 'react'
 import { LoginContext } from './contexts/LoginContext'
 function App() {
-  const[name,setName]=useState("")
-  const[profileInfo,setProfileInfo]=useState(false)
+  const[name,setName]=useState("lop")
+  const[pwd,setPwd]=useState("")
+  const[ProfileInfo,setProfileInfo]=useState(null)
   return (
     <div>
-      <LoginContext.Provider value={{name,setName,setProfileInfo}}>
-      {profileInfo ? <Profile/> : <Login/>}
+      <LoginContext.Provider value={{name,setName,pwd,setPwd,ProfileInfo,setProfileInfo}}>
+      {ProfileInfo ? <Profile/> : <Login/>}
       </LoginContext.Provider>
     </div>
   )
